@@ -1,0 +1,44 @@
+@page  "/login" 
+
+<h1> hi from login </h1>
+
+<div class="LoginContainer">
+
+== check box remember me 
+
+== message for Register 
+
+== text with Register for Register Now 
+
+<EditForm Model="@model" OnValidSubmit="@LoginSubmit" >
+   <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <label>Email:</label>
+            <InputText id="Email" @bind-Value="model.Email" class="form-control" />
+            <ValidationMessage For="@( () => model.Email )" />
+        </div>
+
+        <div class="form-group">
+            <label>Password:</label>
+            <InputText id="Password" @bind-Value="model.Password" class="form-control" />
+            <ValidationMessage For="@( () => model.Password )" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Login</button>
+
+</EditForm>
+</div>
+
+
+
+@code {
+    //= Add Link properties from html 
+
+    LoginModel model = new LoginModel();
+
+    private void LoginSubmit()
+    {
+        
+    }
+} 
